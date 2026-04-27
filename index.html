@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<title>Workout Aura — Train with Intention | Premium iOS Strength Training App</title>
+<meta name="description" content="A premium iOS strength training app for serious lifters. 16 science-backed campaigns, 21 ranks, 16 talismans, 21 auras, and a gamified XP system. Track every set with intention." />
+<meta name="keywords" content="strength training app, weightlifting tracker, workout logger app, iOS workout app, progressive overload tracker, periodization app, gym app for iPhone, hypertrophy tracker, campaign workout app, gamified fitness app" />
+<meta name="author" content="Workout Aura" />
+<link rel="canonical" href="https://myworkoutaura.com/" />
+
+<meta property="og:title" content="Workout Aura — Train with Intention" />
+<meta property="og:description" content="A premium iOS strength training app. 16 science-backed campaigns. 21 ranks. 16 talismans. 21 auras. Built for lifters who train deliberately." />
+<meta property="og:image" content="https://myworkoutaura.com/assets/app-icon.png" />
+<meta property="og:url" content="https://myworkoutaura.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Workout Aura" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Workout Aura — Train with Intention" />
+<meta name="twitter:description" content="A premium iOS strength training app. 16 campaigns, 21 ranks, 16 talismans, 21 auras. Train with intention." />
+<meta name="twitter:image" content="https://myworkoutaura.com/assets/app-icon.png" />
+
+<!-- Apple smart app banner (uncomment + add app-id once App Store ID is issued)
+<meta name="apple-itunes-app" content="app-id=XXXXXXXXX" />
+-->
+
+<link rel="icon" type="image/png" href="assets/app-icon.png" />
+<link rel="apple-touch-icon" href="assets/app-icon.png" />
+<link rel="preload" as="image" href="assets/app-icon.png" />
+<link rel="stylesheet" href="style.css" />
+
+<!-- Structured data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Workout Aura",
+  "alternateName": "Workout Aura — Train with Intention",
+  "description": "A premium iOS strength training app with 16 science-backed campaigns, a 21-rank ladder, 16 collectible talismans, 21 auras, and a gamified XP system. Track strength training with intention.",
+  "url": "https://myworkoutaura.com/",
+  "applicationCategory": "HealthApplication",
+  "applicationSubCategory": "Fitness",
+  "operatingSystem": "iOS 16.0+",
+  "image": "https://myworkoutaura.com/assets/app-icon.png",
+  "offers": [
+    { "@type": "Offer", "name": "Monthly Subscription", "price": "14.99", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Annual Subscription", "price": "59.99", "priceCurrency": "USD" }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Workout Aura",
+    "url": "https://myworkoutaura.com/"
+  }
+}
+</script>
+
+<!-- Structured data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What devices does Workout Aura run on?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is built for iPhone (iOS 16+). It is optimized for the gym — works offline, doesn't drain your battery, and respects safe-area cutouts on every modern iPhone." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Workout Aura different from Strong, Hevy, or Fitbod?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura treats training as a long-form practice, not just a logger. The campaign system, 21-rank ladder, 16 talismans, 21 auras, and XP economy are designed to keep you engaged across years, not just sessions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All training data is stored locally on your device. We don't sync to a server, we don't sell your data, and we don't show ads." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Workout Aura cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Monthly is $14.99. Annual is $59.99 — about $5 per month, a 67% saving. Both unlock the entire app — no in-app paywalls." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ─── Nav ──────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand" aria-label="Workout Aura — home">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <span class="brand-name">Workout Aura</span>
+    </a>
+  </div>
+</header>
+
+<!-- ─── Hero ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> Coming to the App Store</div>
+      <h1 class="headline">Train with <span class="gold">Intention.</span></h1>
+      <p class="sub">A strength training app for lifters who treat the gym like a discipline. 16 science-backed campaigns. 21 ranks to climb. 76 unlockables to earn. Every set logged with reverence.</p>
+      <div class="cta-row">
+        <a href="#cta" class="btn-primary" aria-label="Coming soon to the App Store">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          Coming Soon
+        </a>
+        <a href="#campaigns" class="btn-ghost">See the programs →</a>
+      </div>
+    </div>
+
+    <div class="hero-mockup" aria-hidden="true">
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="assets/workout-bg/workout1bg.png" alt="" class="phone-bg active" loading="eager" />
+          <img src="assets/workout-bg/workout3bg.png" alt="" class="phone-bg" loading="lazy" />
+          <img src="assets/workout-bg/workout5bg.png" alt="" class="phone-bg" loading="lazy" />
+          <img src="assets/workout-bg/workout7bg.png" alt="" class="phone-bg" loading="lazy" />
+          <div class="phone-overlay"></div>
+          <div class="phone-notch"></div>
+          <div class="mock-sub">Forge of Strength · W3 D2</div>
+          <div class="mock-title">Bench Press</div>
+          <div class="mock-stat-row">
+            <div class="mock-stat"><div class="v">8</div><div class="l">Sets</div></div>
+            <div class="mock-stat"><div class="v">+412</div><div class="l">XP</div></div>
+            <div class="mock-stat"><div class="v">PR</div><div class="l">225 LB</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Stats Strip ──────────────────────────────── -->
+<section class="stats-section" style="padding: 0;">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="v">16</div><div class="l">Campaigns</div></div>
+      <div class="stat"><div class="v">413</div><div class="l">Exercises</div></div>
+      <div class="stat"><div class="v">21</div><div class="l">Ranks</div></div>
+      <div class="stat"><div class="v">76+</div><div class="l">Unlockables</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Campaigns (moved up — primary feature) ──── -->
+<section id="campaigns" class="campaigns-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> 16 Campaigns</span></div>
+      <h2 class="h2">Programs you'd actually <span class="gold">finish</span>.</h2>
+      <p class="section-sub">Every campaign is a structured journey with phases, milestones, and a tier of completion — Bronze, Silver, or Gold. Periodization, deloads, and phase-by-phase explanations baked in. No spreadsheets. No guessing.</p>
+    </div>
+
+    <div class="campaign-grid">
+      <a class="camp-card reveal" href="#cta" aria-label="Forge of Strength campaign">
+        <img src="assets/campaigns/forge_of_strength.png" alt="Forge of Strength campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Strength · 12 weeks</div>
+          <div class="camp-name">Forge of Strength</div>
+          <div class="camp-meta">Push / Pull / Legs · 3×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="Iron Foundation campaign">
+        <img src="assets/campaigns/iron_foundation.png" alt="Iron Foundation campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Hypertrophy · 12 weeks</div>
+          <div class="camp-name">Iron Foundation</div>
+          <div class="camp-meta">Full Body · 3×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="The Sculptor campaign">
+        <img src="assets/campaigns/the_sculptor.png" alt="The Sculptor campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Hypertrophy · 12 weeks</div>
+          <div class="camp-name">The Sculptor</div>
+          <div class="camp-meta">Aesthetic Focus · 3×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="5x5 The Proving Ground campaign">
+        <img src="assets/campaigns/5x5_proving_ground.png" alt="5x5 The Proving Ground campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Beginner Strength</div>
+          <div class="camp-name">5×5 Proving Ground</div>
+          <div class="camp-meta">A/B · 3×/wk · 12 weeks</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="Bodyweight Blueprint campaign">
+        <img src="assets/campaigns/bodyweight_blueprint.png" alt="Bodyweight Blueprint campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">No Equipment · 6 weeks</div>
+          <div class="camp-name">Bodyweight Blueprint</div>
+          <div class="camp-meta">Push / Legs / Core · 3×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="The Symmetry campaign">
+        <img src="assets/campaigns/the_symmetry.png" alt="The Symmetry campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Balance · 12 weeks</div>
+          <div class="camp-name">The Symmetry</div>
+          <div class="camp-meta">Aesthetic Balance · 4×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="The Cardinal campaign">
+        <img src="assets/campaigns/the_cardinal.png" alt="The Cardinal campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Full Body · 8 weeks</div>
+          <div class="camp-name">The Cardinal</div>
+          <div class="camp-meta">Big Compounds · 4×/wk</div>
+        </div>
+      </a>
+      <a class="camp-card reveal" href="#cta" aria-label="Off The Couch campaign">
+        <img src="assets/campaigns/off_the_couch.png" alt="Off The Couch campaign artwork" loading="lazy" />
+        <div class="camp-overlay">
+          <div class="camp-tag">Starter · 2 weeks</div>
+          <div class="camp-name">Off The Couch</div>
+          <div class="camp-meta">A / B / C · 3×/wk</div>
+        </div>
+      </a>
+    </div>
+    <p class="campaigns-foot"><strong>+ 8 more</strong>: The Reforge · First Steps · Iron Core · Equilibrium · The Meridian · Broad Shoulders · Chest Forge · Back Builder</p>
+  </div>
+</section>
+
+<!-- ─── Pillars ──────────────────────────────────── -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> Why Workout Aura</span></div>
+      <h2 class="h2">Training, treated like a <span class="gold">discipline</span>.</h2>
+      <p class="section-sub">Most apps log sets. Workout Aura builds a record — of who you are, where you've been, and what you're becoming.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5L17.5 17.5"/><path d="M21 21l-4-4"/><path d="M3 3l4 4"/><path d="M9 4L4 9"/><path d="M20 15l-5 5"/></svg>
+        </div>
+        <h3>Science-backed campaigns</h3>
+        <p>Sixteen 2-to-12-week programs — strength, hypertrophy, fat loss, beginner ramps, specialization. Periodization and phase explanations baked in.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6-6 6 6"/><path d="M12 3v18"/><path d="M5 21h14"/></svg>
+        </div>
+        <h3>A hero card you'll obsess over</h3>
+        <p>21 ranks. 16 talismans. 21 auras. 7 rings. 9 stripes. 26 mantras. Customize every detail of your identity as you climb the ladder.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3>Built for the gym floor</h3>
+        <p>Auto rest timer per exercise. Plate calculator. Warm-up ramps. 1RM estimates. PR detection. Supersets &amp; circuits. Form cues for 100+ lifts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Without vs With (comparison) ────────────── -->
+<section id="compare" class="compare-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> The Difference</span></div>
+      <h2 class="h2">Two ways to <span class="gold">train</span>.</h2>
+      <p class="section-sub">Research shows the most effective way to build a habit is to gamify the process. Workout Aura turns every session into measurable progress.</p>
+    </div>
+
+    <div class="compare-grid reveal">
+      <div class="compare-card without">
+        <div class="compare-tag">Without tracking</div>
+        <ul>
+          <li><span class="x">✕</span> No plan, just chaos</li>
+          <li><span class="x">✕</span> Guessing the weight</li>
+          <li><span class="x">✕</span> PRs go unnoticed</li>
+          <li><span class="x">✕</span> Weights never change</li>
+          <li><span class="x">✕</span> Wrong set volume</li>
+          <li><span class="x">✕</span> Nothing rewards the grind</li>
+          <li><span class="x">✕</span> Flying blind on progress</li>
+          <li><span class="x">✕</span> Quit in 6 weeks</li>
+        </ul>
+      </div>
+      <div class="compare-card with">
+        <div class="compare-tag">With Workout Aura</div>
+        <ul>
+          <li><span class="ok">✓</span> Campaigns with a plan</li>
+          <li><span class="ok">✓</span> Smart suggestions</li>
+          <li><span class="ok">✓</span> PRs auto-detected</li>
+          <li><span class="ok">✓</span> Progressive overload</li>
+          <li><span class="ok">✓</span> Exact sets for growth</li>
+          <li><span class="ok">✓</span> XP, ranks &amp; streaks</li>
+          <li><span class="ok">✓</span> Recovery &amp; growth charts</li>
+          <li><span class="ok">✓</span> A habit that sticks</li>
+        </ul>
+        <p class="compare-foot">…and much more inside.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Rank ladder (moved up — before Vault) ──── -->
+<section id="ranks">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> The Ladder</span></div>
+      <h2 class="h2">21 ranks. Five <span class="gold">divisions</span>. One climb.</h2>
+      <p class="section-sub">From your first session as a Spark to ascending past Aeon. Every rank has its own visual identity, its own division, its own meaning.</p>
+    </div>
+    <div class="rank-rail reveal">
+      <div class="rank-card"><img src="assets/ranks/sparkrank.png" alt="Spark rank emblem" loading="lazy" /><div class="name">Spark</div><div class="div">Fire · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/emberrank.png" alt="Ember rank emblem" loading="lazy" /><div class="name">Ember</div><div class="div">Fire · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/forgerank.png" alt="Forge rank emblem" loading="lazy" /><div class="name">Forge</div><div class="div">Fire · III</div></div>
+      <div class="rank-card"><img src="assets/ranks/ironrank.png" alt="Iron rank emblem" loading="lazy" /><div class="name">Iron</div><div class="div">Crystal · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/centurionrank.png" alt="Centurion rank emblem" loading="lazy" /><div class="name">Centurion</div><div class="div">Crystal · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/titanrank.png" alt="Titan rank emblem" loading="lazy" /><div class="name">Titan</div><div class="div">Lightning · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/paragonrank.png" alt="Paragon rank emblem" loading="lazy" /><div class="name">Paragon</div><div class="div">Lightning · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/archonrank.png" alt="Archon rank emblem" loading="lazy" /><div class="name">Archon</div><div class="div">Cosmos · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/Sovereignrank.png" alt="Sovereign rank emblem" loading="lazy" /><div class="name">Sovereign</div><div class="div">Cosmos · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/ascendantrank.png" alt="Ascendant rank emblem" loading="lazy" /><div class="name">Ascendant</div><div class="div">Cosmos · III</div></div>
+      <div class="rank-card"><img src="assets/ranks/Empyreanrank.png" alt="Empyrean rank emblem" loading="lazy" /><div class="name">Empyrean</div><div class="div">Cosmos · IV</div></div>
+      <div class="rank-card"><img src="assets/ranks/Aeonrank.png" alt="Aeon rank emblem" loading="lazy" /><div class="name">Aeon</div><div class="div">Cosmos · V</div></div>
+    </div>
+    <p class="campaigns-foot" style="margin-top: 4px;">+ Prestige past Aeon — multipliers stack, the climb resets, the path continues.</p>
+  </div>
+</section>
+
+<!-- ─── Vault / Customize Your Aura ──────────────── -->
+<section id="vault" class="vault-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> The Vault</span></div>
+      <h2 class="h2">Customize your <span class="gold">aura</span>.</h2>
+      <p class="section-sub">Earn XP. Unlock six categories of cosmetics. Make your hero card unmistakably yours — your virtues, your colors, your ritual.</p>
+    </div>
+
+    <div class="vault-tabs reveal" role="tablist" aria-label="Customization categories">
+      <button class="vault-tab active" data-tab="talismans" role="tab" aria-selected="true">Talismans <span class="count">16</span></button>
+      <button class="vault-tab" data-tab="auras" role="tab" aria-selected="false">Auras <span class="count">21</span></button>
+      <button class="vault-tab" data-tab="rings" role="tab" aria-selected="false">Rings &amp; Stripes <span class="count">16</span></button>
+      <button class="vault-tab" data-tab="mantras" role="tab" aria-selected="false">Mantras <span class="count">26</span></button>
+      <button class="vault-tab" data-tab="shield" role="tab" aria-selected="false">Streak Shield</button>
+    </div>
+
+    <!-- Talismans -->
+    <div class="vault-panel active" data-panel="talismans" role="tabpanel">
+      <div class="talisman-rail">
+        <div class="talisman-card"><img src="assets/talismans/InitiateMark.png" alt="Initiate's Mark talisman" loading="lazy" /><div class="name">Initiate's Mark</div><div class="virtue">RESOLVE</div></div>
+        <div class="talisman-card"><img src="assets/talismans/BrokenChain1.png" alt="Broken Chain talisman" loading="lazy" /><div class="name">Broken Chain</div><div class="virtue">DEFIANCE</div></div>
+        <div class="talisman-card"><img src="assets/talismans/WarHorn1.png" alt="War Horn talisman" loading="lazy" /><div class="name">War Horn</div><div class="virtue">VALOR</div></div>
+        <div class="talisman-card"><img src="assets/talismans/AtlasStone1.png" alt="Atlas Stone talisman" loading="lazy" /><div class="name">Atlas Stone</div><div class="virtue">BURDEN</div></div>
+        <div class="talisman-card"><img src="assets/talismans/ScarredShield1.png" alt="Scarred Shield talisman" loading="lazy" /><div class="name">Scarred Shield</div><div class="virtue">FORTITUDE</div></div>
+        <div class="talisman-card"><img src="assets/talismans/LionsCrown1.png" alt="Lion's Crown talisman" loading="lazy" /><div class="name">Lion's Crown</div><div class="virtue">DOMINION</div></div>
+        <div class="talisman-card"><img src="assets/talismans/DragonCrest1.png" alt="Dragon Crest talisman" loading="lazy" /><div class="name">Dragon Crest</div><div class="virtue">STRENGTH</div></div>
+        <div class="talisman-card"><img src="assets/talismans/PhoenixFeather1.png" alt="Phoenix Feather talisman" loading="lazy" /><div class="name">Phoenix Feather</div><div class="virtue">REBIRTH</div></div>
+        <div class="talisman-card"><img src="assets/talismans/ObsidianMirror.png" alt="Obsidian Mirror talisman" loading="lazy" /><div class="name">Obsidian Mirror</div><div class="virtue">TRUTH</div></div>
+        <div class="talisman-card"><img src="assets/talismans/Whetstone.png" alt="Whetstone talisman" loading="lazy" /><div class="name">Whetstone</div><div class="virtue">CRAFT</div></div>
+        <div class="talisman-card"><img src="assets/talismans/NightingaleFeather.png" alt="Nightingale's Feather talisman" loading="lazy" /><div class="name">Nightingale's Feather</div><div class="virtue">VIGIL</div></div>
+        <div class="talisman-card"><img src="assets/talismans/Lodestone.png" alt="Lodestone talisman" loading="lazy" /><div class="name">Lodestone</div><div class="virtue">PURPOSE</div></div>
+        <div class="talisman-card"><img src="assets/talismans/SerpentCoil.png" alt="Serpent's Coil talisman" loading="lazy" /><div class="name">Serpent's Coil</div><div class="virtue">PATIENCE</div></div>
+        <div class="talisman-card"><img src="assets/talismans/MarblePillar.png" alt="Marble Pillar talisman" loading="lazy" /><div class="name">Marble Pillar</div><div class="virtue">CONSTANCY</div></div>
+        <div class="talisman-card"><img src="assets/talismans/SeersEye.png" alt="Seer's Eye talisman" loading="lazy" /><div class="name">Seer's Eye</div><div class="virtue">VISION</div></div>
+        <div class="talisman-card"><img src="assets/talismans/ThresholdKey.png" alt="Threshold Key talisman" loading="lazy" /><div class="name">Threshold Key</div><div class="virtue">PASSAGE</div></div>
+      </div>
+    </div>
+
+    <!-- Auras -->
+    <div class="vault-panel" data-panel="auras" role="tabpanel">
+      <div class="aura-grid">
+        <div class="aura-card"><div class="aura-orb" style="--ac:#FF9340"></div><div class="name">Ember Drift</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#7ECFF0"></div><div class="name">Frost Mist</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#FF6A00"></div><div class="name">Molten Forge</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#60A0FF"></div><div class="name">Volt Arc</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#E0954A"></div><div class="name">Titan Pulse</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#C9A84C"></div><div class="name">Golden Aura</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#6FD4D4"></div><div class="name">Tidal Calm</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#B88A4C"></div><div class="name">Quake Resonance</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#C8B4FF"></div><div class="name">Phantom Ring</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#7B8DEE"></div><div class="name">Box Cadence</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#B0222F"></div><div class="name">Blood Moon</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#40A8F0"></div><div class="name">Phase Shift</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#E04040"></div><div class="name">Void Echo</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#FF6A00"></div><div class="name">Inferno Ring</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#FF8A2B"></div><div class="name">Dragon Breath</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#FF6B6B"></div><div class="name">Supernova</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#6EE0B8"></div><div class="name">Aurora Veil</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#E8C967"></div><div class="name">Nadi</div></div>
+        <div class="aura-card"><div class="aura-orb" style="--ac:#1A1A2E"></div><div class="name">Singularity</div></div>
+      </div>
+    </div>
+
+    <!-- Rings & Stripes -->
+    <div class="vault-panel" data-panel="rings" role="tabpanel">
+      <div class="ring-stripe-grid">
+        <div class="cust-card">
+          <div class="meta">7 Ring Styles</div>
+          <h4>The XP Ring</h4>
+          <p>The progress arc that wraps your rank. From the standard sweep to particle-trailed comets, choose how your XP visualizes.</p>
+          <div class="cust-row">
+            <span class="cust-pill">Default</span>
+            <span class="cust-pill">Double Ring</span>
+            <span class="cust-pill">Notched</span>
+            <span class="cust-pill">Pulse Ring</span>
+            <span class="cust-pill gold">Comet Trail</span>
+            <span class="cust-pill gold">Saturn Ring</span>
+            <span class="cust-pill gold">Particle Vortex</span>
+          </div>
+        </div>
+        <div class="cust-card">
+          <div class="meta">9 Stripe Styles</div>
+          <h4>Rank Stripes</h4>
+          <p>Three stripes mark progress through every rank. Earn the right to redesign them.</p>
+          <div class="cust-row">
+            <span class="cust-pill">Classic</span>
+            <span class="cust-pill">Neon</span>
+            <span class="cust-pill">Crimson</span>
+            <span class="cust-pill">Frost</span>
+            <span class="cust-pill">Solar</span>
+            <span class="cust-pill">Rainbow</span>
+            <span class="cust-pill gold">Phantom</span>
+            <span class="cust-pill gold">Inferno</span>
+            <span class="cust-pill gold">Holographic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mantras -->
+    <div class="vault-panel" data-panel="mantras" role="tabpanel">
+      <div class="cust-card">
+        <div class="meta">26 Mantras</div>
+        <h4>Your training signature</h4>
+        <p>A single line, displayed on your hero card, written by your own hand. Pick a vow, change it as you change.</p>
+        <div class="mantra-list" style="margin-top: 18px;">
+          <span class="mantra-chip">"One More Rep"</span>
+          <span class="mantra-chip">"Trust The Process"</span>
+          <span class="mantra-chip">"Earn It"</span>
+          <span class="mantra-chip">"No Shortcuts"</span>
+          <span class="mantra-chip">"Built Not Born"</span>
+          <span class="mantra-chip">"Iron Sharpens Iron"</span>
+          <span class="mantra-chip">"Discipline Over Motivation"</span>
+          <span class="mantra-chip">"Pain Is Temporary"</span>
+          <span class="mantra-chip">"Respect The Grind"</span>
+          <span class="mantra-chip">"Comfortable Being Uncomfortable"</span>
+          <span class="mantra-chip">"The Iron Never Lies"</span>
+          <span class="mantra-chip">"Suffer Now, Shine Later"</span>
+          <span class="mantra-chip">"Gravity Doesn't Negotiate"</span>
+          <span class="mantra-chip">"Forged In Fire"</span>
+          <span class="mantra-chip">"Earn It In Silence"</span>
+          <span class="mantra-chip">"Built Different"</span>
+          <span class="mantra-chip">"The Last One Standing"</span>
+          <span class="mantra-chip">"Unbreakable"</span>
+          <span class="mantra-chip">… and 8 more</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Streak Shield -->
+    <div class="vault-panel" data-panel="shield" role="tabpanel">
+      <div class="cust-card" style="text-align: center; padding: 36px 24px;">
+        <div class="meta" style="margin-bottom: 12px;">XP Insurance</div>
+        <h4 style="font-size: 22px; margin-bottom: 12px;">The Streak Shield</h4>
+        <p style="max-width: 480px; margin: 0 auto;">Travel. Sickness. Life. Earn peace of mind — the Shield protects your streak when you need to step away. Spend, and keep your fire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Split: Built for the gym floor ──────────── -->
+<section>
+  <div class="wrap split reveal">
+    <div class="split-text">
+      <div class="eyebrow"><span class="dot"></span> Built for Lifters</div>
+      <h3>The details that <span class="gold">actually matter</span>.</h3>
+      <p>Every working set deserves attention. Every compound deserves a warm-up. Workout Aura handles the parts you'd otherwise track on a notepad.</p>
+      <ul>
+        <li>Form cues for 100+ exercises, dismissable per session</li>
+        <li>Auto warm-up ramps with progressive loading chips</li>
+        <li>Plate calculator with proportional barbell visualization</li>
+        <li>Exercise swap suggestions by muscle group</li>
+        <li>Bodyweight auto-detection — no weight drum for chinups</li>
+        <li>Estimated 1RM, PR detection, regression alerts</li>
+        <li>Supersets, circuits, and rest skips handled cleanly</li>
+        <li>Screen wake lock during workouts</li>
+      </ul>
+    </div>
+    <div class="split-visual">
+      <img src="assets/workout-bg/workout2bg.png" alt="In-app workout view with form cues" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── Split: Privacy ───────────────────────────── -->
+<section>
+  <div class="wrap split reverse reveal">
+    <div class="split-text">
+      <div class="eyebrow"><span class="dot"></span> Private by Design</div>
+      <h3>Your data. <span class="gold">Your device.</span></h3>
+      <p>Workout Aura is a single-player app, by intention. Every set, photo, mantra, and PR lives only on your iPhone. No server. No analytics SDKs. No advertising IDs.</p>
+      <ul>
+        <li>100% local storage — nothing leaves your device</li>
+        <li>No accounts, no email signup, no tracking</li>
+        <li>Full JSON export &amp; import for backups</li>
+        <li>Optional HealthKit integration — read only, never transmitted</li>
+      </ul>
+    </div>
+    <div class="split-visual">
+      <img src="assets/workout-bg/workout4bg.png" alt="Hero card and rank visualization" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── Pricing ──────────────────────────────────── -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> Pricing</span></div>
+      <h2 class="h2">One price. <span class="gold">Everything unlocked.</span></h2>
+      <p class="section-sub">No tiers. No paywalls inside the app. Subscribe and the entire experience is yours.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="price reveal">
+        <div class="price-name">Monthly</div>
+        <div class="price-amount">$14.99<span>/ mo</span></div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> All 16 campaigns</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> All 21 ranks &amp; the full Vault</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 413 exercises with form cues</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Cancel anytime</li>
+        </ul>
+      </div>
+      <div class="price featured reveal">
+        <div class="price-tag">Best Value</div>
+        <div class="price-name">Annual</div>
+        <div class="price-amount">$59.99<span>/ yr</span></div>
+        <div class="price-save">SAVE 67% · ~$5/MO</div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Everything in Monthly</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Future campaigns &amp; updates</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Prestige system</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ──────────────────────────────────────── -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> Common Questions</span></div>
+      <h2 class="h2">Things people <span class="gold">ask</span>.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>What devices does Workout Aura run on?</summary>
+        <p>Workout Aura is built for iPhone (iOS 16+). Optimized for the gym — works offline, doesn't drain your battery, respects safe-area cutouts on every modern iPhone.</p>
+      </details>
+      <details>
+        <summary>How is this different from Strong, Hevy, or Fitbod?</summary>
+        <p>Workout Aura treats training as a long-form practice, not just a logger. The campaign system, 21-rank ladder, talismans, auras, and XP economy are designed to keep you engaged across years, not just sessions.</p>
+      </details>
+      <details>
+        <summary>Do I need any equipment?</summary>
+        <p>No. Bodyweight Blueprint, First Steps, and Off The Couch require no equipment. Most other campaigns assume access to a barbell, dumbbells, and a bench — but the exercise swap feature lets you substitute almost anything.</p>
+      </details>
+      <details>
+        <summary>Is my data private?</summary>
+        <p>Yes. All your training data is stored locally on your device. We don't sync to a server, we don't sell your data, and we don't show ads. See our <a href="privacy.html">privacy policy</a>.</p>
+      </details>
+      <details>
+        <summary>Can I import my existing workout history?</summary>
+        <p>Not yet — but JSON export/import is built in for backups, and CSV import from common loggers is on the roadmap.</p>
+      </details>
+      <details>
+        <summary>Is there a free trial?</summary>
+        <p>Yes. Workout Aura offers a free trial through the App Store so you can experience the full app before subscribing.</p>
+      </details>
+      <details>
+        <summary>What if a campaign is too easy or too hard?</summary>
+        <p>Every exercise can be swapped for a same-muscle alternative, and weights auto-suggest based on your previous sessions. If a phase isn't right, the periodization adjusts as you go.</p>
+      </details>
+      <details>
+        <summary>Will I lose my data if I switch iPhones?</summary>
+        <p>No. Use Settings → Export to save your training data as a JSON file before switching. On your new device, install Workout Aura and use Settings → Import.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA Banner ───────────────────────────────── -->
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <h2>Be the first to lift with us.</h2>
+      <p>Workout Aura is launching on the App Store soon. Train with intention, from day one.</p>
+      <a href="#" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        Coming Soon to the App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ───────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <span class="brand-name">Workout Aura</span>
+        </a>
+        <p class="foot-tag">A premium iOS strength training app. Train with intention.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#campaigns">Programs</a></li>
+          <li><a href="#vault">Customize</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="mailto:hello@myworkoutaura.com">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-low">
+      <span>© 2026 Workout Aura. All rights reserved.</span>
+      <span>v15 · Made for lifters.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky bottom CTA (mobile only) -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="#cta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+    Coming Soon to the App Store
+  </a>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
