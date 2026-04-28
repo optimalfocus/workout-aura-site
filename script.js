@@ -8,23 +8,80 @@
   var nav = document.getElementById('nav');
   var stickyCta = document.getElementById('stickyCta');
 
+  // Hide sticky CTA when the inline #cta is in view (avoid stacked CTAs)
+  var ctaSection = document.getElementById('cta');
+  var ctaInView = false;
+  if (ctaSection && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      ctaInView = entries[0].isIntersecting;
+      onScroll();
+    }, { threshold: 0.25 }).observe(ctaSection);
+  }
+
   function onScroll() {
     var y = window.scrollY;
     if (nav) {
       if (y > 8) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
     }
-    // Show sticky CTA after first viewport, hide near footer
     if (stickyCta) {
       var doc = document.documentElement;
       var nearBottom = (window.innerHeight + y) > doc.scrollHeight - 240;
       var pastHero = y > window.innerHeight * 0.6;
-      if (pastHero && !nearBottom) stickyCta.classList.add('show');
+      if (pastHero && !nearBottom && !ctaInView) stickyCta.classList.add('show');
       else stickyCta.classList.remove('show');
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // ─── Waitlist form ────────────────────────────────
+  var wlForm = document.getElementById('waitlistForm');
+  var wlMsg = document.getElementById('waitlistMsg');
+  if (wlForm) {
+    wlForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = wlForm.querySelector('input[type="email"]').value.trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!ok) {
+        showMsg('Please enter a valid email address.', true);
+        return;
+      }
+      var endpoint = wlForm.getAttribute('action');
+      // Pre-launch fallback: if the endpoint hasn't been wired yet, open mailto.
+      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORM_ID') !== -1) {
+        window.location.href = 'mailto:support@myworkoutaura.com?subject=Waitlist%20signup&body=' + encodeURIComponent(email);
+        showMsg("Thanks — we'll be in touch.", false);
+        return;
+      }
+      wlForm.classList.add('sending');
+      var data = new FormData(wlForm);
+      fetch(endpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (r) {
+          wlForm.classList.remove('sending');
+          if (r.ok) {
+            wlForm.reset();
+            showMsg("You're on the list. Check your inbox for confirmation.", false);
+          } else {
+            showMsg('Something went wrong. Email support@myworkoutaura.com to join.', true);
+          }
+        })
+        .catch(function () {
+          wlForm.classList.remove('sending');
+          showMsg('Network error. Email support@myworkoutaura.com to join.', true);
+        });
+    });
+  }
+  function showMsg(text, isError) {
+    if (!wlMsg) return;
+    wlMsg.textContent = text;
+    wlMsg.classList.toggle('error', !!isError);
+    wlMsg.hidden = false;
+  }
 
   // ─── Scroll-reveal via IntersectionObserver ──────
   var revealEls = document.querySelectorAll('.reveal');
