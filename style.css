@@ -1261,100 +1261,118 @@ h2.h2 .gold {
   padding: 0 16px;
 }
 
-/* ─── Mobile: stack as cards under the brand row ──── */
+/* ─── Scroll wrapper + swipe hint ─────────────────── */
+.vs-scroll-wrap {
+  position: relative;
+  margin-top: 36px;
+}
+.vs-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  border-radius: var(--r-xl);
+  /* Edge fade — hint at more content offscreen */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+}
+.vs-scroll-wrap .vs-table {
+  margin-top: 0;
+}
+.vs-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  top: -34px;
+  right: 8px;
+  font-family: var(--M);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.vs-scroll-hint svg { animation: vsSwipe 1.6s ease-in-out infinite; }
+@keyframes vsSwipe {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50%      { transform: translateX(6px); opacity: 1; }
+}
+
+/* ─── Mobile: horizontal scroll w/ sticky feature column ── */
 @media (max-width: 760px) {
+  .vs-section { padding: 48px 0 60px; }
+  .vs-scroll-hint { display: inline-flex; }
+  .vs-scroll {
+    /* Disable rounded mask at edges so sticky col looks anchored */
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
   .vs-table {
-    grid-template-columns: 1fr 1fr;
+    min-width: 720px;
+    /* Slightly tighter columns so all four app columns fit comfortably */
+    grid-template-columns: 200px 150px 120px 120px 120px;
     border-radius: var(--r-lg);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
-  /* Hide the original feature-name column header */
-  .vs-head .vs-feature-cell { display: none; }
-  /* Brand row: 2x2 grid */
-  .vs-head .vs-cell { padding: 16px 8px 14px; }
-  .vs-brand-tag { font-size: 8px; padding: 2.5px 7px; }
-  .vs-brand-mark { width: 32px; height: 32px; font-size: 16px; }
-  .vs-brand-mark-us svg { width: 16px; height: 16px; }
-  .vs-brand-name { font-size: 12px; }
 
-  /* Group label still spans full row */
-  .vs-group-label { padding: 16px 16px 6px; font-size: 9px; }
-
-  /* Each feature row becomes: full-width feature name, then 4 cells in 2x2 */
-  .vs-row:not(.vs-head):not(.vs-row-price) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 8px 0;
-  }
-  .vs-row:not(.vs-head) .vs-feature-cell {
-    grid-column: 1 / -1;
-    padding: 6px 16px 8px;
+  /* Feature column: sticky-left, opaque background to mask scrolling cells */
+  .vs-feature-cell {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, #131110 70%, rgba(19, 17, 16, 0.96) 100%);
+    box-shadow: 6px 0 12px -8px rgba(0, 0, 0, 0.7);
+    padding: 14px 14px 14px 18px;
     font-size: 13px;
-    color: var(--text-2);
-    font-weight: 500;
-    border-top: 0;
   }
-  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell:not(.vs-feature-cell) {
-    border-top: 0;
-    padding: 6px 8px;
-    flex-direction: row;
-    gap: 8px;
-    justify-content: flex-start;
-    font-size: 12px;
-    background: transparent;
+  .vs-head .vs-feature-cell {
+    background: linear-gradient(90deg, #1b1916 70%, rgba(27, 25, 22, 0.96) 100%);
+    padding: 18px 14px 14px 18px;
+    font-size: 10px;
   }
-  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell:not(.vs-feature-cell)::before {
-    content: attr(data-h);
-    font-family: var(--M);
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-3);
-    margin-right: 2px;
-    flex: 0 0 auto;
-    min-width: 60px;
-  }
-  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell.vs-us {
-    background: linear-gradient(90deg, rgba(201, 168, 76, 0.10), rgba(201, 168, 76, 0.02));
-    border-left: 0; border-right: 0;
-  }
-  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell.vs-us::before { color: var(--gold); }
-  .vs-mark-yes { width: 22px; height: 22px; }
-  .vs-mark-yes::after { width: 10px; height: 5px; transform: rotate(-45deg) translate(1px, -1px); }
 
-  /* Price row stays as a 4-column band */
-  .vs-row-price {
-    display: contents;
-  }
-  .vs-row-price .vs-feature-cell {
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(201, 168, 76, 0.18);
-    text-align: center;
-    justify-content: center;
-    padding-top: 18px;
-    padding-bottom: 8px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--gold);
-    font-family: var(--M);
-    font-weight: 700;
-  }
-  .vs-row-price .vs-cell:not(.vs-feature-cell) {
-    flex-direction: column;
-    gap: 2px;
-    padding: 14px 8px 18px;
-    border-top: 0;
-  }
-  .vs-row-price .vs-cell:not(.vs-feature-cell)::before {
-    content: attr(data-h);
-    font-family: var(--M);
+  /* Group label still spans full row, sticky to left edge for context */
+  .vs-group-label {
+    position: sticky;
+    left: 0;
+    padding: 14px 18px 6px;
     font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-3);
+    /* Use a width hack so the label text stays visible while user scrolls */
+    width: max(100%, 720px);
   }
+
+  /* Header brand cluster — slightly tighter */
+  .vs-head .vs-cell { padding: 16px 8px 14px; scroll-snap-align: center; }
+  .vs-brand-mark { width: 30px; height: 30px; font-size: 15px; border-radius: 8px; }
+  .vs-brand-mark-us svg { width: 14px; height: 14px; }
+  .vs-brand-name { font-size: 12px; }
+  .vs-brand-tag { font-size: 8px; letter-spacing: 0.18em; padding: 2.5px 7px; }
+
+  /* Body cells */
+  .vs-row .vs-cell:not(.vs-feature-cell) {
+    padding: 14px 8px;
+    scroll-snap-align: center;
+  }
+  .vs-mark-yes { width: 24px; height: 24px; }
+  .vs-mark-yes::after { width: 11px; height: 6px; }
+  .vs-mark-partial { font-size: 9px; padding: 4px 8px; gap: 5px; }
+  .vs-mark-partial::before { width: 4px; height: 4px; }
+  .vs-mark-text { font-size: 9px; }
+  .vs-price { font-size: 14px; }
+  .vs-price-other { font-size: 13px; }
+
+  .vs-row-price .vs-cell { padding-top: 18px; padding-bottom: 18px; }
+}
+
+/* Tighter for very small screens — narrower feature column */
+@media (max-width: 380px) {
+  .vs-table {
+    grid-template-columns: 170px 140px 110px 110px 110px;
+    min-width: 640px;
+  }
+  .vs-feature-cell { font-size: 12px; padding-left: 14px; }
 }
 
 /* ─── Waitlist form ──────────────────────────────── */

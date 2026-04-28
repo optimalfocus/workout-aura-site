@@ -76,6 +76,20 @@
         });
     });
   }
+  // ─── Hide vs-table swipe hint after first horizontal scroll
+  var vsScroll = document.querySelector('.vs-scroll');
+  var vsHint = document.querySelector('.vs-scroll-hint');
+  if (vsScroll && vsHint) {
+    var fadeHint = function () {
+      if (vsScroll.scrollLeft > 12) {
+        vsHint.style.transition = 'opacity 0.4s ease';
+        vsHint.style.opacity = '0';
+        vsScroll.removeEventListener('scroll', fadeHint);
+      }
+    };
+    vsScroll.addEventListener('scroll', fadeHint, { passive: true });
+  }
+
   function showMsg(text, isError) {
     if (!wlMsg) return;
     wlMsg.textContent = text;
