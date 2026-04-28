@@ -1009,83 +1009,53 @@ h2.h2 .gold {
   margin: 0 auto 24px;
 }
 
-/* ─── Competitor comparison table ────────────────── */
-.vs-section { padding: 56px 0; }
-.vs-table-wrap {
-  margin-top: 28px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: var(--r-lg);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, #131211, #0c0b0a);
+/* ─── The Field (vs other apps) — extends compare-card ── */
+.vs-section {
+  background:
+    radial-gradient(ellipse 700px 400px at 50% 0%, rgba(120, 120, 130, 0.05), transparent 70%),
+    radial-gradient(ellipse 700px 400px at 50% 100%, rgba(201, 168, 76, 0.10), transparent 70%),
+    var(--bg);
 }
-.vs-table {
-  width: 100%;
-  min-width: 680px;
-  border-collapse: collapse;
-  font-family: var(--T);
+.vs-marks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: -4px 0 18px;
 }
-.vs-table thead th {
-  font-family: var(--G);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.04em;
+.vs-mark {
+  font-family: var(--M);
+  font-size: 10px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-2);
-  padding: 18px 14px;
-  text-align: center;
-  border-bottom: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.02);
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 999px;
+  color: rgba(245, 242, 233, 0.55);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
-.vs-table thead th.vs-feature-h { text-align: left; padding-left: 22px; }
-.vs-table thead th.vs-us {
+.vs-mark-us {
   color: var(--gold-soft);
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.04));
-}
-.vs-table tbody tr { transition: background 0.15s ease; }
-.vs-table tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
-.vs-table tbody tr:not(:last-child) th,
-.vs-table tbody tr:not(:last-child) td { border-bottom: 1px solid var(--line); }
-.vs-table th[scope="row"] {
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.06));
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: none;
   font-family: var(--T);
+  font-style: italic;
+  font-size: 12px;
   font-weight: 500;
-  font-size: 14px;
-  text-align: left;
-  padding: 16px 14px 16px 22px;
-  color: var(--text);
 }
-.vs-table td {
+.vs-respect {
+  margin-top: 22px;
   text-align: center;
-  padding: 16px 14px;
-  font-size: 14px;
-  color: var(--text-2);
-  font-weight: 500;
-}
-.vs-table td.ok {
-  color: var(--green);
-  font-size: 18px;
-  font-weight: 700;
-}
-.vs-table td.no { color: var(--text-3); }
-.vs-table td.partial {
-  color: var(--orange);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-}
-.vs-table td.vs-price { color: var(--gold-soft); font-weight: 600; font-family: var(--M); font-size: 15px; }
-.vs-table tbody tr td:nth-child(2),
-.vs-table tbody tr th:nth-child(2) {
-  background: rgba(201, 168, 76, 0.06);
-}
-.vs-table tbody tr:last-child td:nth-child(2) {
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), rgba(201, 168, 76, 0.12));
-}
-.vs-foot {
-  margin-top: 14px;
   font-size: 12px;
   color: var(--text-4);
-  text-align: center;
-  padding: 0 12px 4px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  padding: 0 16px;
 }
 
 /* ─── Waitlist form ──────────────────────────────── */
