@@ -1009,53 +1009,352 @@ h2.h2 .gold {
   margin: 0 auto 24px;
 }
 
-/* ─── The Field (vs other apps) — extends compare-card ── */
+/* ─── The Field — designed comparison table ──────── */
 .vs-section {
+  padding: 56px 0 72px;
   background:
     radial-gradient(ellipse 700px 400px at 50% 0%, rgba(120, 120, 130, 0.05), transparent 70%),
     radial-gradient(ellipse 700px 400px at 50% 100%, rgba(201, 168, 76, 0.10), transparent 70%),
     var(--bg);
 }
-.vs-marks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  margin: -4px 0 18px;
+
+.vs-table {
+  position: relative;
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1.6fr) 1.4fr 1fr 1fr 1fr;
+  border-radius: var(--r-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 30%),
+    linear-gradient(180deg, #141311, #0c0b0a);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  isolation: isolate;
 }
-.vs-mark {
+
+/* Rows */
+.vs-row, .vs-group {
+  display: contents;
+}
+.vs-cell {
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--T);
+  font-size: 14px;
+  color: var(--text-2);
+  text-align: center;
+}
+.vs-row:first-child .vs-cell { border-top: 0; }
+.vs-feature-cell {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 16px 18px 16px 22px;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* Featured "us" column — gold gradient spans full column via per-cell bg */
+.vs-cell.vs-us {
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.10), rgba(201, 168, 76, 0.04));
+  border-left: 1px solid rgba(201, 168, 76, 0.18);
+  border-right: 1px solid rgba(201, 168, 76, 0.18);
+  position: relative;
+}
+.vs-row:first-child .vs-cell.vs-us {
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.22), rgba(201, 168, 76, 0.08));
+  box-shadow: inset 0 1px 0 rgba(232, 201, 114, 0.3);
+}
+
+/* Header row */
+.vs-head .vs-cell {
+  padding: 22px 14px 18px;
+  background: rgba(255, 255, 255, 0.018);
+}
+.vs-head .vs-feature-cell {
+  font-family: var(--M);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-3);
+  padding: 22px 18px 18px 22px;
+}
+
+/* Brand cluster in header */
+.vs-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+.vs-brand-mark {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--mc, #1c1c1c);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--G);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.vs-brand-mark-us {
+  background: linear-gradient(160deg, var(--gold-soft) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+  color: #1a1300;
+  border: 1px solid rgba(232, 201, 114, 0.6);
+  box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.vs-brand-name {
+  font-family: var(--G);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.vs-brand-us .vs-brand-name { color: var(--gold-soft); }
+.vs-brand-tag {
+  font-family: var(--M);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1a1300;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(201, 168, 76, 0.3);
+}
+
+/* Group divider rows */
+.vs-group-label {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 22px 8px;
   font-family: var(--M);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold);
+  border-top: 1px solid rgba(201, 168, 76, 0.14);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
+}
+.vs-group-label svg {
+  flex: 0 0 auto;
+  opacity: 0.85;
+}
+.vs-table .vs-group:first-of-type .vs-group-label { border-top-color: rgba(255, 255, 255, 0.06); }
+
+/* Cell content marks */
+.vs-mark-yes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--gold-soft) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+  color: #1a1300;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.vs-mark-yes::after {
+  content: "";
+  width: 13px; height: 7px;
+  border-left: 2.4px solid #1a1300;
+  border-bottom: 2.4px solid #1a1300;
+  transform: rotate(-45deg) translate(1px, -1.5px);
+  border-bottom-left-radius: 1px;
+}
+/* Non-featured columns get a quieter check */
+.vs-row:not(.vs-head) .vs-cell:not(.vs-us) .vs-mark-yes {
+  background: linear-gradient(160deg, rgba(45, 189, 140, 0.7), rgba(45, 189, 140, 0.4));
+  box-shadow: 0 2px 6px rgba(45, 189, 140, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.vs-row:not(.vs-head) .vs-cell:not(.vs-us) .vs-mark-yes::after {
+  border-color: #061a14;
+}
+
+.vs-mark-no {
+  display: inline-block;
+  width: 16px; height: 2px;
+  border-radius: 2px;
+  background: rgba(245, 242, 233, 0.18);
+}
+
+.vs-mark-partial {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--M);
+  font-size: 10px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 6px 11px;
+  color: var(--orange);
+  padding: 5px 10px;
   border-radius: 999px;
-  color: rgba(245, 242, 233, 0.55);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 144, 48, 0.08);
+  border: 1px solid rgba(255, 144, 48, 0.22);
+  white-space: nowrap;
 }
-.vs-mark-us {
-  color: var(--gold-soft);
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.06));
-  border: 1px solid rgba(201, 168, 76, 0.4);
+.vs-mark-partial::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex: 0 0 auto;
+  box-shadow: 0 0 6px rgba(255, 144, 48, 0.6);
+}
+
+.vs-mark-text {
+  font-family: var(--M);
+  font-size: 10px;
   letter-spacing: 0.08em;
-  text-transform: none;
-  font-family: var(--T);
-  font-style: italic;
-  font-size: 12px;
-  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 600;
 }
+
+.vs-price {
+  font-family: var(--M);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold-soft);
+  letter-spacing: 0.01em;
+}
+.vs-price-other {
+  font-family: var(--M);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.vs-row-price .vs-cell {
+  background: rgba(255, 255, 255, 0.012);
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.vs-row-price .vs-cell.vs-us {
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.16), rgba(201, 168, 76, 0.08));
+  box-shadow: inset 0 1px 0 rgba(232, 201, 114, 0.18);
+}
+
 .vs-respect {
-  margin-top: 22px;
+  margin: 22px auto 0;
   text-align: center;
   font-size: 12px;
   color: var(--text-4);
   max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.6;
   padding: 0 16px;
+}
+
+/* ─── Mobile: stack as cards under the brand row ──── */
+@media (max-width: 760px) {
+  .vs-table {
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--r-lg);
+  }
+  /* Hide the original feature-name column header */
+  .vs-head .vs-feature-cell { display: none; }
+  /* Brand row: 2x2 grid */
+  .vs-head .vs-cell { padding: 16px 8px 14px; }
+  .vs-brand-tag { font-size: 8px; padding: 2.5px 7px; }
+  .vs-brand-mark { width: 32px; height: 32px; font-size: 16px; }
+  .vs-brand-mark-us svg { width: 16px; height: 16px; }
+  .vs-brand-name { font-size: 12px; }
+
+  /* Group label still spans full row */
+  .vs-group-label { padding: 16px 16px 6px; font-size: 9px; }
+
+  /* Each feature row becomes: full-width feature name, then 4 cells in 2x2 */
+  .vs-row:not(.vs-head):not(.vs-row-price) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 8px 0;
+  }
+  .vs-row:not(.vs-head) .vs-feature-cell {
+    grid-column: 1 / -1;
+    padding: 6px 16px 8px;
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 500;
+    border-top: 0;
+  }
+  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell:not(.vs-feature-cell) {
+    border-top: 0;
+    padding: 6px 8px;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+    font-size: 12px;
+    background: transparent;
+  }
+  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell:not(.vs-feature-cell)::before {
+    content: attr(data-h);
+    font-family: var(--M);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-right: 2px;
+    flex: 0 0 auto;
+    min-width: 60px;
+  }
+  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell.vs-us {
+    background: linear-gradient(90deg, rgba(201, 168, 76, 0.10), rgba(201, 168, 76, 0.02));
+    border-left: 0; border-right: 0;
+  }
+  .vs-row:not(.vs-head):not(.vs-row-price) .vs-cell.vs-us::before { color: var(--gold); }
+  .vs-mark-yes { width: 22px; height: 22px; }
+  .vs-mark-yes::after { width: 10px; height: 5px; transform: rotate(-45deg) translate(1px, -1px); }
+
+  /* Price row stays as a 4-column band */
+  .vs-row-price {
+    display: contents;
+  }
+  .vs-row-price .vs-feature-cell {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(201, 168, 76, 0.18);
+    text-align: center;
+    justify-content: center;
+    padding-top: 18px;
+    padding-bottom: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    font-family: var(--M);
+    font-weight: 700;
+  }
+  .vs-row-price .vs-cell:not(.vs-feature-cell) {
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 8px 18px;
+    border-top: 0;
+  }
+  .vs-row-price .vs-cell:not(.vs-feature-cell)::before {
+    content: attr(data-h);
+    font-family: var(--M);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
 }
 
 /* ─── Waitlist form ──────────────────────────────── */

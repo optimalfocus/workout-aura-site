@@ -317,7 +317,7 @@
 </section>
 
 <!-- ─── The Field — vs other apps ────────────────── -->
-<section id="vs" class="compare-section vs-section">
+<section id="vs" class="vs-section">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> The Field</span></div>
@@ -325,41 +325,154 @@
       <p class="section-sub">Strong, Hevy, and Fitbod are good at logging. Workout Aura is a different kind of app — built around a journey, not just a database.</p>
     </div>
 
-    <div class="compare-grid reveal">
-      <div class="compare-card without">
-        <div class="compare-tag">The other apps</div>
-        <div class="vs-marks" aria-hidden="true">
-          <span class="vs-mark">Strong</span>
-          <span class="vs-mark">Hevy</span>
-          <span class="vs-mark">Fitbod</span>
+    <div class="vs-table reveal" role="table" aria-label="Feature comparison versus Strong, Hevy, and Fitbod">
+      <!-- Header row -->
+      <div class="vs-row vs-head" role="row">
+        <div class="vs-cell vs-feature-cell" role="columnheader">Feature</div>
+        <div class="vs-cell vs-app-cell vs-us" role="columnheader">
+          <div class="vs-brand vs-brand-us">
+            <div class="vs-brand-mark vs-brand-mark-us" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 L20 6 V13 C20 17 16 21 12 22 C8 21 4 17 4 13 V6 Z"/><path d="M9 10 L11 12 L15 8"/></svg>
+            </div>
+            <div class="vs-brand-name">Workout Aura</div>
+            <div class="vs-brand-tag">Featured</div>
+          </div>
         </div>
-        <ul>
-          <li><span class="x">✕</span> A logger, not a journey</li>
-          <li><span class="x">✕</span> No campaign system or periodization</li>
-          <li><span class="x">✕</span> No rank progression</li>
-          <li><span class="x">✕</span> No cosmetic unlocks</li>
-          <li><span class="x">✕</span> No XP economy</li>
-          <li><span class="x">✕</span> No talismans, auras, mantras</li>
-          <li><span class="x">✕</span> Cloud account required</li>
-          <li><span class="x">✕</span> Lifters churn at week 6</li>
-        </ul>
+        <div class="vs-cell vs-app-cell" role="columnheader">
+          <div class="vs-brand">
+            <div class="vs-brand-mark" style="--mc:#222" aria-hidden="true">S</div>
+            <div class="vs-brand-name">Strong</div>
+          </div>
+        </div>
+        <div class="vs-cell vs-app-cell" role="columnheader">
+          <div class="vs-brand">
+            <div class="vs-brand-mark" style="--mc:#1A6FE0" aria-hidden="true">H</div>
+            <div class="vs-brand-name">Hevy</div>
+          </div>
+        </div>
+        <div class="vs-cell vs-app-cell" role="columnheader">
+          <div class="vs-brand">
+            <div class="vs-brand-mark" style="--mc:#FF5722" aria-hidden="true">F</div>
+            <div class="vs-brand-name">Fitbod</div>
+          </div>
+        </div>
       </div>
-      <div class="compare-card with">
-        <div class="compare-tag">Workout Aura</div>
-        <div class="vs-marks vs-marks-us" aria-hidden="true">
-          <span class="vs-mark vs-mark-us">A practice, not a log</span>
+
+      <!-- Group: Programming -->
+      <div class="vs-group" role="row">
+        <div class="vs-group-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          Programming
         </div>
-        <ul>
-          <li><span class="ok">✓</span> 16 science-backed campaigns</li>
-          <li><span class="ok">✓</span> Periodization &amp; phase explanations</li>
-          <li><span class="ok">✓</span> 21-rank progression ladder</li>
-          <li><span class="ok">✓</span> 76 unlockable cosmetics</li>
-          <li><span class="ok">✓</span> XP economy &amp; streak multipliers</li>
-          <li><span class="ok">✓</span> Talismans, auras, mantras</li>
-          <li><span class="ok">✓</span> 100% local, no account required</li>
-          <li><span class="ok">✓</span> A habit that sticks for years</li>
-        </ul>
-        <p class="compare-foot">Built for lifters who think in years, not just sessions.</p>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Science-backed campaigns</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes" aria-label="Yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no" aria-label="No"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no" aria-label="No"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-partial">Auto-gen</span></div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Periodization &amp; phase explanations</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+
+      <!-- Group: Progression -->
+      <div class="vs-group" role="row">
+        <div class="vs-group-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 15 12 9 18 15"/><polyline points="6 21 12 15 18 21"/></svg>
+          Progression
+        </div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">21-rank progression ladder</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">XP economy &amp; streak multipliers</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-partial">Streaks only</span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">PR auto-detection &amp; regression alerts</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-partial">PRs only</span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-partial">PRs only</span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-partial">PRs only</span></div>
+      </div>
+
+      <!-- Group: Customization -->
+      <div class="vs-group" role="row">
+        <div class="vs-group-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></svg>
+          Customization
+        </div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">76 cosmetic unlocks</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Talismans, auras &amp; mantras</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+
+      <!-- Group: Tools -->
+      <div class="vs-group" role="row">
+        <div class="vs-group-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          On the gym floor
+        </div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Plate calculator + warm-up ramps</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-partial">Plates only</span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-no"></span></div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Form cues for 100+ exercises</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-no"></span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-yes"></span></div>
+      </div>
+
+      <!-- Group: Privacy & Price -->
+      <div class="vs-group" role="row">
+        <div class="vs-group-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Privacy &amp; pricing
+        </div>
+      </div>
+      <div class="vs-row" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">100% local, no account required</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-mark-yes"></span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-mark-text">Account</span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-mark-text">Account</span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-mark-text">Account</span></div>
+      </div>
+      <div class="vs-row vs-row-price" role="row">
+        <div class="vs-cell vs-feature-cell" role="rowheader">Annual price</div>
+        <div class="vs-cell vs-us" role="cell" data-h="Workout Aura"><span class="vs-price">$59.99</span></div>
+        <div class="vs-cell" role="cell" data-h="Strong"><span class="vs-price-other">$29.99</span></div>
+        <div class="vs-cell" role="cell" data-h="Hevy"><span class="vs-price-other">$59.99</span></div>
+        <div class="vs-cell" role="cell" data-h="Fitbod"><span class="vs-price-other">$79.99</span></div>
       </div>
     </div>
 
