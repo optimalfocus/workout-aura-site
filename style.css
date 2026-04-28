@@ -73,7 +73,7 @@ button { font: inherit; cursor: pointer; border: 0; background: 0; color: inheri
 .brand { display: flex; align-items: center; gap: 10px; min-height: var(--tap); }
 .brand-mark {
   width: 32px; height: 32px; border-radius: 8px;
-  background-image: url('assets/app-icon.png');
+  background-image: url('assets/app-icon-180.png');
   background-size: cover;
   box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.25), 0 4px 14px rgba(201, 168, 76, 0.15);
 }

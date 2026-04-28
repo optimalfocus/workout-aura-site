@@ -42,15 +42,32 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // ─── Hero phone bg cycle ─────────────────────────
-  var bgs = document.querySelectorAll('.phone-bg');
-  if (bgs.length > 1) {
-    var idx = 0;
-    setInterval(function () {
-      bgs[idx].classList.remove('active');
-      idx = (idx + 1) % bgs.length;
-      bgs[idx].classList.add('active');
-    }, 4500);
+  // ─── Hero phone bg cycle (lazy-create siblings) ──
+  var firstBg = document.querySelector('.phone-bg[data-bg-rotate]');
+  if (firstBg) {
+    var ids = (firstBg.getAttribute('data-bg-rotate') || '').split(',').filter(Boolean);
+    var screen = firstBg.parentNode;
+    var bgs = [firstBg];
+    // Build sibling <img> for the remaining rotation indices, lazy-loaded
+    for (var i = 1; i < ids.length; i++) {
+      var im = new Image();
+      im.src = 'assets/workout-bg/workout' + ids[i] + 'bg.webp';
+      im.alt = '';
+      im.className = 'phone-bg';
+      im.loading = 'lazy';
+      im.decoding = 'async';
+      im.width = 1376; im.height = 768;
+      screen.insertBefore(im, firstBg.nextSibling);
+      bgs.push(im);
+    }
+    if (bgs.length > 1) {
+      var idx = 0;
+      setInterval(function () {
+        bgs[idx].classList.remove('active');
+        idx = (idx + 1) % bgs.length;
+        bgs[idx].classList.add('active');
+      }, 4500);
+    }
   }
 
   // ─── Vault tabs ───────────────────────────────────
