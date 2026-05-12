@@ -35,47 +35,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ─── Waitlist form ────────────────────────────────
-  var wlForm = document.getElementById('waitlistForm');
-  var wlMsg = document.getElementById('waitlistMsg');
-  if (wlForm) {
-    wlForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = wlForm.querySelector('input[type="email"]').value.trim();
-      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!ok) {
-        showMsg('Please enter a valid email address.', true);
-        return;
-      }
-      var endpoint = wlForm.getAttribute('action');
-      // Pre-launch fallback: if the endpoint hasn't been wired yet, open mailto.
-      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORM_ID') !== -1) {
-        window.location.href = 'mailto:support@myworkoutaura.com?subject=Waitlist%20signup&body=' + encodeURIComponent(email);
-        showMsg("Thanks — we'll be in touch.", false);
-        return;
-      }
-      wlForm.classList.add('sending');
-      var data = new FormData(wlForm);
-      fetch(endpoint, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function (r) {
-          wlForm.classList.remove('sending');
-          if (r.ok) {
-            wlForm.reset();
-            showMsg("You're on the list. Check your inbox for confirmation.", false);
-          } else {
-            showMsg('Something went wrong. Email support@myworkoutaura.com to join.', true);
-          }
-        })
-        .catch(function () {
-          wlForm.classList.remove('sending');
-          showMsg('Network error. Email support@myworkoutaura.com to join.', true);
-        });
-    });
-  }
   // ─── Hide vs-table swipe hint after first horizontal scroll
   var vsScroll = document.querySelector('.vs-scroll');
   var vsHint = document.querySelector('.vs-scroll-hint');
@@ -88,13 +47,6 @@
       }
     };
     vsScroll.addEventListener('scroll', fadeHint, { passive: true });
-  }
-
-  function showMsg(text, isError) {
-    if (!wlMsg) return;
-    wlMsg.textContent = text;
-    wlMsg.classList.toggle('error', !!isError);
-    wlMsg.hidden = false;
   }
 
   // ─── Scroll-reveal via IntersectionObserver ──────
