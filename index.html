@@ -38,6 +38,22 @@
 <link rel="preload" as="image" href="assets/workout-bg/workout1bg.webp" fetchpriority="high" />
 <link rel="stylesheet" href="style.css" />
 
+<!-- Structured data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Workout Aura",
+  "url": "https://myworkoutaura.com/",
+  "logo": "https://myworkoutaura.com/assets/app-icon-512.webp",
+  "email": "support@myworkoutaura.com",
+  "description": "Maker of Workout Aura, a premium iOS strength training app built around long-form campaigns, a 21-rank progression ladder, and a deep customization economy.",
+  "sameAs": [
+    "https://apps.apple.com/us/app/workout-aura-lift-level-up/id6765660104"
+  ]
+}
+</script>
+
 <!-- Structured data: SoftwareApplication -->
 <script type="application/ld+json">
 {
@@ -51,15 +67,39 @@
   "applicationSubCategory": "Fitness",
   "operatingSystem": "iOS 16.0+",
   "image": "https://myworkoutaura.com/assets/app-icon-512.webp",
+  "downloadUrl": "https://apps.apple.com/us/app/workout-aura-lift-level-up/id6765660104",
+  "featureList": [
+    "16 science-backed strength training campaigns",
+    "21-rank progression ladder across five elemental divisions",
+    "XP economy with streak multipliers",
+    "16 talismans, 21 auras, 26 mantras, 7 XP ring styles, 9 rank stripes",
+    "413 exercises with form cues for 100+ lifts",
+    "Auto rest timer, plate calculator, warm-up ramps",
+    "PR auto-detection and regression alerts",
+    "Local-first data with optional cloud sync",
+    "Works fully offline without an account"
+  ],
   "offers": [
-    { "@type": "Offer", "name": "Weekly Subscription", "price": "4.99", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Annual Subscription", "price": "39.99", "priceCurrency": "USD" }
+    { "@type": "Offer", "name": "Weekly Subscription", "price": "4.99", "priceCurrency": "USD", "category": "subscription" },
+    { "@type": "Offer", "name": "Annual Subscription", "price": "39.99", "priceCurrency": "USD", "category": "subscription" }
   ],
   "publisher": {
     "@type": "Organization",
     "name": "Workout Aura",
     "url": "https://myworkoutaura.com/"
   }
+  /* TODO: Add "aggregateRating" once you have real App Store review data.
+     Do NOT fabricate values — Google penalizes fake structured-data reviews.
+     Example to fill in once you have, say, 50+ App Store ratings:
+
+     "aggregateRating": {
+       "@type": "AggregateRating",
+       "ratingValue": "4.8",      // your actual App Store average
+       "reviewCount": "127",       // your actual review count
+       "bestRating": "5",
+       "worstRating": "1"
+     }
+  */
 }
 </script>
 
@@ -71,23 +111,63 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "What is the best gym tracking app with gamification?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is a premium iOS gym tracker built around gamification. It has a 21-rank progression ladder, an XP economy with streak multipliers, 16 unlockable talismans, 21 auras, 26 mantras, and 16 multi-week structured campaigns. Most gym trackers (Strong, Hevy, Fitbod) focus only on logging — Workout Aura adds long-form progression and identity customization." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good alternative to Fitbod?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is a good Fitbod alternative if you prefer pre-designed periodized programs over AI-generated daily workouts. Fitbod auto-generates one workout at a time; Workout Aura ships 16 science-backed campaigns (2 to 12 weeks each) with phases, deloads, and periodization built in. Workout Aura is also more affordable at $39.99/year versus Fitbod's $79.99/year." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good alternative to Hevy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is a good Hevy alternative if you prefer solo training over a social feed. Hevy is community-driven with follower feeds and shared workouts; Workout Aura is single-player, local-first, and built around intrinsic motivation through ranks and unlockables. Workout Aura also costs $39.99/year versus Hevy's $59.99/year." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which workout app has a ranking or leveling system like a video game?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is built around an RPG-style 21-rank ladder organized across five elemental divisions (Fire, Crystal, Lightning, Cosmos, and post-Aeon Prestige). Each workout earns XP with streak multipliers. Beyond ranks, lifters unlock 16 talismans, 21 auras, 7 XP ring styles, 9 rank stripes, and 26 mantras to customize their hero card." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Workout Aura worth it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is worth it for lifters who want structured multi-week programs and progression-based motivation. At $39.99/year (about $3.33/month with a 7-day free trial), it is cheaper than Fitbod ($79.99/year) and Hevy ($59.99/year), and includes 16 campaigns, 413 exercises, 21 ranks, and the full 76+ cosmetic unlock system with no in-app paywalls. Lifters who only need basic set logging may prefer Strong, which is cheaper at $29.99/year." }
+    },
+    {
+      "@type": "Question",
       "name": "What devices does Workout Aura run on?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is built for iPhone (iOS 16+). It is optimized for the gym — works offline, doesn't drain your battery, and respects safe-area cutouts on every modern iPhone." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura is built for iPhone (iOS 16 and later). It is iOS-only — there is no Android, iPad-native, or web version. It is optimized for the gym floor: works offline, doesn't drain battery, respects safe-area cutouts, and keeps the screen awake during workouts." }
     },
     {
       "@type": "Question",
       "name": "How is Workout Aura different from Strong, Hevy, or Fitbod?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Workout Aura treats training as a long-form practice, not just a logger. The campaign system, 21-rank ladder, 16 talismans, 21 auras, and XP economy are designed to keep you engaged across years, not just sessions." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Strong is a clean barbell-focused logger. Hevy is community-driven and social. Fitbod auto-generates workouts via AI. Workout Aura is none of these — it treats training as a long-form practice with structured campaigns, a 21-rank progression ladder, talismans, auras, and an XP economy designed to keep you engaged across years." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Workout Aura work without internet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Workout Aura is local-first and fully usable offline without an account. All training data is stored on your device by default. Cloud sync (via Sign in with Apple or Google) is optional and only used to back up across devices." }
     },
     {
       "@type": "Question",
       "name": "Is my data private?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. By default all data stays on your device. Cloud sync is optional — sign in with Apple or Google to back up and sync across devices. We never sell your data and we never show ads." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. By default all training data stays on your iPhone. Cloud sync is opt-in only. Workout Aura uses no advertising IDs, no third-party analytics SDKs, and never sells your data. You can export your data as CSV or JSON anytime, and delete your account and all cloud data from in-app Settings." }
     },
     {
       "@type": "Question",
       "name": "How much does Workout Aura cost?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Weekly is $4.99. Annual is $39.99 with a 7-day free trial — about $3.33 per month, an 85% saving versus weekly. Both unlock the entire app — no in-app paywalls." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Weekly subscription is $4.99/week. Annual subscription is $39.99/year (about $3.33/month, an 85% saving versus weekly) with a 7-day free trial. Both tiers unlock the entire app — there are no in-app paywalls, no consumables, and no tiered features." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Workout Aura have a free trial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The annual plan includes a 7-day free trial through the App Store. Cancel anytime within the trial and you are not charged." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can beginners use Workout Aura?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Workout Aura includes beginner-specific campaigns: Off The Couch (2-week starter, 3 sessions/week), First Steps (4-week true beginner, full-body A/B/C), and 5×5 The Proving Ground (12-week novice strength program). Each campaign includes phase explanations and form cues for 100+ exercises." }
     }
   ]
 }
@@ -168,6 +248,7 @@
       <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> 16 Campaigns</span></div>
       <h2 class="h2">Programs you'd actually <span class="gold">finish</span>.</h2>
       <p class="section-sub">Every campaign is a structured journey with phases, milestones, and a tier of completion — Bronze, Silver, or Gold. Periodization, deloads, and phase-by-phase explanations baked in. No spreadsheets. No guessing.</p>
+      <p class="section-sub" style="margin-top: 8px; font-size: 14px; color: #888;">Research consistently favors periodized training over linear approaches for both strength (Rhea et al., 2002) and hypertrophy (Schoenfeld et al., 2015) outcomes. Every Workout Aura campaign is built on this foundation.</p>
     </div>
 
     <div class="campaign-grid">
@@ -281,7 +362,7 @@
     <div class="section-head reveal">
       <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> The Difference</span></div>
       <h2 class="h2">Two ways to <span class="gold">train</span>.</h2>
-      <p class="section-sub">Research shows the most effective way to build a habit is to gamify the process. Workout Aura turns every session into measurable progress.</p>
+      <p class="section-sub">Research on behavior change shows gamification — points, levels, and visible progress — meaningfully improves adherence to long-term habits (Cugelman, 2013; Johnson et al., 2016). Workout Aura turns every session into measurable progress.</p>
     </div>
 
     <div class="compare-grid reveal">
@@ -744,12 +825,40 @@
     </div>
     <div class="faq reveal">
       <details>
+        <summary>What is the best gym tracking app with gamification?</summary>
+        <p>Workout Aura is a premium iOS gym tracker built around gamification. It has a 21-rank progression ladder, an XP economy with streak multipliers, 16 unlockable talismans, 21 auras, 26 mantras, and 16 multi-week structured campaigns. Most other gym trackers focus only on logging — Workout Aura adds long-form progression and identity customization.</p>
+      </details>
+      <details>
+        <summary>What's a good alternative to Fitbod?</summary>
+        <p>Workout Aura is a good Fitbod alternative if you prefer pre-designed periodized programs over AI-generated daily workouts. Fitbod auto-generates one workout at a time; Workout Aura ships 16 science-backed campaigns (2 to 12 weeks each) with phases, deloads, and periodization built in. Workout Aura is also more affordable at $39.99/year vs Fitbod's $79.99/year. <a href="vs-fitbod.html">See the full comparison →</a></p>
+      </details>
+      <details>
+        <summary>What's a good alternative to Hevy?</summary>
+        <p>Workout Aura is a good Hevy alternative if you prefer solo training over a social feed. Hevy is community-driven with follower feeds and shared workouts; Workout Aura is single-player, local-first, and built around intrinsic motivation through ranks and unlockables. Workout Aura also costs $39.99/year vs Hevy's $59.99/year. <a href="vs-hevy.html">See the full comparison →</a></p>
+      </details>
+      <details>
+        <summary>Which workout app has a ranking or leveling system like a video game?</summary>
+        <p>Workout Aura is built around an RPG-style 21-rank ladder organized across five elemental divisions (Fire, Crystal, Lightning, Cosmos, and post-Aeon Prestige). Each workout earns XP with streak multipliers. Beyond ranks, lifters unlock 16 talismans, 21 auras, 7 XP ring styles, 9 rank stripes, and 26 mantras to customize their hero card.</p>
+      </details>
+      <details>
+        <summary>Is Workout Aura worth it?</summary>
+        <p>Workout Aura is worth it for lifters who want structured multi-week programs and progression-based motivation. At $39.99/year (about $3.33/month with a 7-day free trial), it's cheaper than Fitbod ($79.99/year) and Hevy ($59.99/year), and includes 16 campaigns, 413 exercises, 21 ranks, and the full 76+ cosmetic unlock system with no in-app paywalls. Lifters who only need basic set logging may prefer Strong at $29.99/year.</p>
+      </details>
+      <details>
         <summary>What devices does Workout Aura run on?</summary>
-        <p>Workout Aura is built for iPhone (iOS 16+). Optimized for the gym — works offline, doesn't drain your battery, respects safe-area cutouts on every modern iPhone.</p>
+        <p>Workout Aura is built for iPhone (iOS 16+). It is iOS-only — no Android, no native iPad app, no web version. Optimized for the gym floor: works offline, doesn't drain battery, respects safe-area cutouts, keeps screen awake during workouts.</p>
       </details>
       <details>
         <summary>How is this different from Strong, Hevy, or Fitbod?</summary>
-        <p>Workout Aura treats training as a long-form practice, not just a logger. The campaign system, 21-rank ladder, talismans, auras, and XP economy are designed to keep you engaged across years, not just sessions.</p>
+        <p>Strong is a clean barbell-focused logger. Hevy is community-driven and social. Fitbod auto-generates workouts via AI. Workout Aura is none of these — it treats training as a long-form practice with structured campaigns, a 21-rank progression ladder, talismans, auras, and an XP economy designed to keep you engaged across years.</p>
+      </details>
+      <details>
+        <summary>Does Workout Aura work without internet?</summary>
+        <p>Yes. Workout Aura is local-first and fully usable offline without an account. All training data is stored on your device by default. Cloud sync (via Sign in with Apple or Google) is optional and only used to back up across devices.</p>
+      </details>
+      <details>
+        <summary>Can beginners use Workout Aura?</summary>
+        <p>Yes. Workout Aura includes beginner-specific campaigns: Off The Couch (2-week starter), First Steps (4-week true beginner), and 5×5 The Proving Ground (12-week novice strength). Each includes phase explanations and form cues for 100+ exercises.</p>
       </details>
       <details>
         <summary>Do I need any equipment?</summary>
@@ -757,15 +866,15 @@
       </details>
       <details>
         <summary>Is my data private?</summary>
-        <p>Yes. By default all training data is stored locally on your device. Cloud sync is optional — sign in with Apple or Google to back up and sync across devices. We never sell your data and we never show ads. See our <a href="privacy.html">privacy policy</a>.</p>
+        <p>Yes. By default all training data is stored locally on your device. Cloud sync is optional — sign in with Apple or Google to back up and sync across devices. No advertising IDs, no third-party analytics SDKs. We never sell your data and we never show ads. See our <a href="privacy.html">privacy policy</a>.</p>
+      </details>
+      <details>
+        <summary>Is there a free trial?</summary>
+        <p>Yes. The annual plan includes a 7-day free trial through the App Store so you can experience the full app before subscribing. Cancel anytime within the trial and you are not charged.</p>
       </details>
       <details>
         <summary>Can I import my existing workout history?</summary>
         <p>Not yet — but CSV and JSON export are built in for backups, and CSV import from common loggers is on the roadmap.</p>
-      </details>
-      <details>
-        <summary>Is there a free trial?</summary>
-        <p>Yes. Workout Aura offers a free trial through the App Store so you can experience the full app before subscribing.</p>
       </details>
       <details>
         <summary>What if a campaign is too easy or too hard?</summary>
@@ -818,15 +927,18 @@
         </ul>
       </div>
       <div>
+        <h3 class="foot-h">Compare</h3>
+        <ul>
+          <li><a href="vs-fitbod.html">vs Fitbod</a></li>
+          <li><a href="vs-hevy.html">vs Hevy</a></li>
+          <li><a href="best-gym-apps-2026.html">Best gym apps 2026</a></li>
+        </ul>
+      </div>
+      <div>
         <h3 class="foot-h">Company</h3>
         <ul>
           <li><a href="support.html">Support</a></li>
           <li><a href="mailto:support@myworkoutaura.com">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="foot-h">Legal</h3>
-        <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Use</a></li>
         </ul>
@@ -834,7 +946,7 @@
     </div>
     <div class="foot-low">
       <span>© 2026 Workout Aura. All rights reserved.</span>
-      <span>v15 · Made for lifters.</span>
+      <span>Last updated May 2026 · v15 · Made for lifters.</span>
     </div>
   </div>
 </footer>

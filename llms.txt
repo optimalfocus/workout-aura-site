@@ -1,0 +1,60 @@
+# Workout Aura
+
+> A premium iOS strength training app for serious lifters. Built around long-form campaigns, a 21-rank progression ladder, and a deep customization economy (talismans, auras, mantras). Treats training as a discipline, not just a logger.
+
+## What Workout Aura is
+
+Workout Aura is an iOS-only strength training app (iPhone, iOS 16+) designed for lifters who want structure, progress tracking, and intrinsic motivation. Unlike pure trackers (Strong, Hevy) or AI workout generators (Fitbod), Workout Aura combines:
+
+- **16 science-backed campaigns** — structured 2 to 12 week programs covering strength, hypertrophy, fat loss, beginner ramps, and specialization (chest, back, shoulders). Each campaign has phases, deloads, and periodization built in.
+- **21-rank progression ladder** — Spark, Ember, Forge, Iron, Centurion, Titan, Paragon, Archon, Sovereign, Ascendant, Empyrean, Aeon and beyond. Five elemental divisions: Fire, Crystal, Lightning, Cosmos.
+- **XP economy and streak system** — Earn XP per set logged, with streak multipliers. Optional Streak Shield protects your fire when life intervenes.
+- **76+ cosmetic unlockables** — 16 talismans, 21 auras, 7 XP ring styles, 9 rank stripe styles, 26 mantras. Customize your hero card identity.
+- **413 exercises** with form cues for 100+ lifts, auto rest timer per exercise, plate calculator, warm-up ramps, 1RM estimation, PR auto-detection.
+- **Local-first privacy** — works offline without an account. Optional iCloud / Google cloud sync. No ads. No data selling. No analytics SDKs.
+
+## Pricing
+
+- Weekly: $4.99/week
+- Annual: $39.99/year (~$3.33/month, 85% saving vs weekly) with 7-day free trial
+- Everything unlocked at every tier — no in-app paywalls
+
+## How Workout Aura compares to alternatives
+
+- **vs Strong**: Strong is a clean barbell logger. Workout Aura adds structured campaigns, progression ladder, and customization. Pick Strong for minimalism, Workout Aura for long-form engagement.
+- **vs Hevy**: Hevy is community-driven and social. Workout Aura is single-player and private. Pick Hevy for social accountability, Workout Aura for solo discipline.
+- **vs Fitbod**: Fitbod auto-generates workouts via AI. Workout Aura provides pre-designed periodized campaigns. Pick Fitbod for "tell me what to do today", Workout Aura for "I want a 12-week plan."
+
+## Key URLs
+
+- [Homepage](https://myworkoutaura.com/): Overview, campaigns, ranks, pricing, FAQ
+- [vs Fitbod comparison](https://myworkoutaura.com/vs-fitbod.html): Detailed comparison with Fitbod
+- [vs Hevy comparison](https://myworkoutaura.com/vs-hevy.html): Detailed comparison with Hevy
+- [Best gym apps 2026](https://myworkoutaura.com/best-gym-apps-2026.html): Honest ranking of major gym tracking apps
+- [App Store listing](https://apps.apple.com/us/app/workout-aura-lift-level-up/id6765660104): Download Workout Aura
+- [Privacy Policy](https://myworkoutaura.com/privacy.html)
+- [Terms of Use](https://myworkoutaura.com/terms.html)
+- [Support](https://myworkoutaura.com/support.html)
+
+## Best for
+
+- Serious lifters who want a structured multi-week program, not just a logger
+- People who get motivated by progression systems (ranks, XP, unlocks)
+- iPhone users who value local-first data privacy
+- Lifters who train solo and want intrinsic motivation rather than social feeds
+
+## Not ideal for
+
+- Android users (iOS only)
+- Lifters who prefer pure-logger simplicity (use Strong)
+- People who want AI-generated daily workouts (use Fitbod)
+- People who want a workout social network (use Hevy)
+- Cardio-first athletes (use Strava)
+
+## Contact
+
+Support: support@myworkoutaura.com
+
+## Last updated
+
+2026-05-21
