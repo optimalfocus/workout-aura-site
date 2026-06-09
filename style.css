@@ -880,6 +880,41 @@ h2.h2 .gold {
   text-transform: uppercase;
 }
 
+/* ─── Screenshot Gallery ─────────────────────────── */
+.gallery-section {
+  background:
+    radial-gradient(ellipse 700px 380px at 50% 0%, rgba(201, 168, 76, 0.06), transparent 65%),
+    var(--bg);
+}
+.shot-rail {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 20px 18px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.shot-rail::-webkit-scrollbar { display: none; }
+.shot-rail::after { content: ''; flex: 0 0 6px; }
+.shot-card {
+  flex: 0 0 240px;
+  scroll-snap-align: center;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+.shot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 901px) {
+  .shot-card { flex-basis: 270px; }
+}
+
 /* ─── Pricing ────────────────────────────────────── */
 .price-grid {
   display: grid;
