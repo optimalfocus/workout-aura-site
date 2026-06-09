@@ -33,7 +33,7 @@
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/app-icon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/app-icon-180.png" />
-<link rel="preload" as="image" href="assets/screenshots/01_hero.jpg" fetchpriority="high" />
+<link rel="preload" as="image" href="assets/gallery/01_hero1.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="style.css" />
 
 <!-- Structured data: Organization -->
@@ -208,13 +208,17 @@
       </div>
     </div>
 
-    <div class="hero-mockup" aria-hidden="true">
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="assets/screenshots/01_hero.jpg" alt="" class="phone-bg active" width="800" height="1738" fetchpriority="high" decoding="async" data-bg-rotate="01_hero.jpg,03_workout.jpg,06_journey.jpg,07_vault.jpg,02_campaigns.jpg,05_progress.jpg,04_honors.jpg,08_share.jpg" />
-        </div>
-      </div>
-    </div>
+  </div>
+
+  <div class="shot-rail hero-shots reveal" role="list" aria-label="App screenshots">
+    <div class="shot-card" role="listitem"><img src="assets/gallery/01_hero1.jpg" alt="Workout Aura — your workouts, gamified the right way" decoding="async" fetchpriority="high" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/04_workout.jpg" alt="Workout view — know exactly what's next, with rest timer and set logging" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/05_muscles.jpg" alt="Volume landmarks — easily identify muscles to improve" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/02_hero2.jpg" alt="Climb the ranks and earn your hero card" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/06_campaigns.jpg" alt="Science-backed campaigns to follow" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/03_hero3.jpg" alt="Track every set with intention" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/07_vault.jpg" alt="The Vault — unlock talismans, auras, and rewards" loading="lazy" decoding="async" width="660" height="1434" /></div>
+    <div class="shot-card" role="listitem"><img src="assets/gallery/08_share.jpg" alt="Share your aura and progress" loading="lazy" decoding="async" width="660" height="1434" /></div>
   </div>
 </section>
 
@@ -227,27 +231,6 @@
       <div class="stat"><div class="v">21</div><div class="l">Ranks</div></div>
       <div class="stat"><div class="v">76+</div><div class="l">Unlockables</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ─── Screenshot Gallery ───────────────────────── -->
-<section id="gallery" class="gallery-section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow-center"><span class="eyebrow"><span class="dot"></span> A Look Inside</span></div>
-      <h2 class="h2">See it <span class="gold">in action</span>.</h2>
-      <p class="section-sub">Gamified workouts, a muscle-by-muscle map of what to improve, structured campaigns, and a vault of rewards — straight from the App Store.</p>
-    </div>
-  </div>
-  <div class="shot-rail reveal" role="list" aria-label="App screenshots">
-    <div class="shot-card" role="listitem"><img src="assets/gallery/01_hero1.jpg" alt="Workout Aura — your workouts, gamified the right way" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/04_workout.jpg" alt="Workout view — know exactly what's next, with rest timer and set logging" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/05_muscles.jpg" alt="Volume landmarks — easily identify muscles to improve" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/02_hero2.jpg" alt="Climb the ranks and earn your hero card" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/06_campaigns.jpg" alt="Science-backed campaigns to follow" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/03_hero3.jpg" alt="Track every set with intention" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/07_vault.jpg" alt="The Vault — unlock talismans, auras, and rewards" loading="lazy" decoding="async" width="660" height="1434" /></div>
-    <div class="shot-card" role="listitem"><img src="assets/gallery/08_share.jpg" alt="Share your aura and progress" loading="lazy" decoding="async" width="660" height="1434" /></div>
   </div>
 </section>
 
@@ -588,18 +571,18 @@
       <p class="section-sub">From your first session as a Spark to ascending past Aeon. Every rank has its own visual identity, its own division, its own meaning.</p>
     </div>
     <div class="rank-rail reveal">
-      <div class="rank-card"><img src="assets/ranks/sparkrank.webp" alt="Spark rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Spark</div><div class="div">Fire · I</div></div>
-      <div class="rank-card"><img src="assets/ranks/emberrank.webp" alt="Ember rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Ember</div><div class="div">Fire · II</div></div>
-      <div class="rank-card"><img src="assets/ranks/forgerank.webp" alt="Forge rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Forge</div><div class="div">Fire · III</div></div>
-      <div class="rank-card"><img src="assets/ranks/ironrank.webp" alt="Iron rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Iron</div><div class="div">Crystal · I</div></div>
-      <div class="rank-card"><img src="assets/ranks/centurionrank.webp" alt="Centurion rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Centurion</div><div class="div">Crystal · II</div></div>
-      <div class="rank-card"><img src="assets/ranks/titanrank.webp" alt="Titan rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Titan</div><div class="div">Lightning · I</div></div>
-      <div class="rank-card"><img src="assets/ranks/paragonrank.webp" alt="Paragon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Paragon</div><div class="div">Lightning · II</div></div>
-      <div class="rank-card"><img src="assets/ranks/archonrank.webp" alt="Archon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Archon</div><div class="div">Cosmos · I</div></div>
-      <div class="rank-card"><img src="assets/ranks/Sovereignrank.webp" alt="Sovereign rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Sovereign</div><div class="div">Cosmos · II</div></div>
-      <div class="rank-card"><img src="assets/ranks/ascendantrank.webp" alt="Ascendant rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Ascendant</div><div class="div">Cosmos · III</div></div>
-      <div class="rank-card"><img src="assets/ranks/Empyreanrank.webp" alt="Empyrean rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Empyrean</div><div class="div">Cosmos · IV</div></div>
-      <div class="rank-card"><img src="assets/ranks/Aeonrank.webp" alt="Aeon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Aeon</div><div class="div">Cosmos · V</div></div>
+      <div class="rank-card"><img src="assets/ranks/spark.png" alt="Spark rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Spark</div><div class="div">Fire · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/ember.png" alt="Ember rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Ember</div><div class="div">Fire · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/forge.png" alt="Forge rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Forge</div><div class="div">Fire · III</div></div>
+      <div class="rank-card"><img src="assets/ranks/iron.png" alt="Iron rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Iron</div><div class="div">Crystal · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/centurion.png" alt="Centurion rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Centurion</div><div class="div">Crystal · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/titan.png" alt="Titan rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Titan</div><div class="div">Lightning · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/paragon.png" alt="Paragon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Paragon</div><div class="div">Lightning · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/archon.png" alt="Archon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Archon</div><div class="div">Cosmos · I</div></div>
+      <div class="rank-card"><img src="assets/ranks/sovereign.png" alt="Sovereign rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Sovereign</div><div class="div">Cosmos · II</div></div>
+      <div class="rank-card"><img src="assets/ranks/ascendant.png" alt="Ascendant rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Ascendant</div><div class="div">Cosmos · III</div></div>
+      <div class="rank-card"><img src="assets/ranks/empyrean.png" alt="Empyrean rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Empyrean</div><div class="div">Cosmos · IV</div></div>
+      <div class="rank-card"><img src="assets/ranks/aeon.png" alt="Aeon rank emblem" loading="lazy"  decoding="async"  width="300" height="300" /><div class="name">Aeon</div><div class="div">Cosmos · V</div></div>
     </div>
     <p class="campaigns-foot" style="margin-top: 4px;">+ Prestige past Aeon — multipliers stack, the climb resets, the path continues.</p>
   </div>

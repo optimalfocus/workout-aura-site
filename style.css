@@ -897,6 +897,8 @@ h2.h2 .gold {
 }
 .shot-rail::-webkit-scrollbar { display: none; }
 .shot-rail::after { content: ''; flex: 0 0 6px; }
+.hero-shots { margin-top: 8px; }
+@media (min-width: 901px) { .hero-shots { margin-top: 16px; } }
 .shot-card {
   flex: 0 0 240px;
   scroll-snap-align: center;
